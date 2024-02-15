@@ -2,7 +2,6 @@ import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import smallReactLogo from "./react-logo.png";
-
 import "@fontsource-variable/montserrat";
 import "./App.css";
 
