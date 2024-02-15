@@ -1,35 +1,57 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
+import reactLogo from "./assets/react.svg";
+import viteLogo from "/vite.svg";
+import smallReactLogo from "./react-logo.png";
 
-function App() {
-  const [count, setCount] = useState(0)
+import "@fontsource-variable/montserrat";
+import "./App.css";
 
+function Header() {
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <header>
+      <nav className="nav">
+        <img src={smallReactLogo} className="nav-logo" />
+        <ul className="nav-items">
+          <li>Pricing</li>
+          <li>About</li>
+          <li>Contact</li>
+        </ul>
+      </nav>
+    </header>
+  );
 }
 
-export default App
+function Footer() {
+  return (
+    <footer>
+      <small>© 2021 Ziroll development. All rights reserved.</small>
+    </footer>
+  );
+}
+
+function MainContent() {
+  return (
+    <div className="main">
+      <h1>Reasons I'm excited to learn React</h1>
+      <ul className="styled-list">
+        <li>
+          It's a popular library, so I'll be able to fit in with the cool kids!
+        </li>
+        <li>I'm more likely to get a job as a developer if I know React</li>
+      </ul>
+    </div>
+  );
+}
+
+function App() {
+  const [count, setCount] = useState(0);
+  return (
+    <div className="main-layout">
+      <Header />
+      <MainContent />
+      <Footer />
+    </div>
+  );
+}
+
+export default App;
